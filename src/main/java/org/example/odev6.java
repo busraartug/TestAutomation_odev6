@@ -12,35 +12,28 @@ public class odev6 {
 
         ShoppingList.add("butter");
         ShoppingList.add("egg");
+        ShoppingList.add("bitter");
         ShoppingList.add("bread");
         ShoppingList.add("oil");
         ShoppingList.add("yogurt");
 
-        ArrayList<String> ShoppingListRepeated = new ArrayList<>();
+        String metin = "";
 
         for(String alinacak : ShoppingList){
             ArrayList<Character> repeatedCharacters = new ArrayList<>();
-            for(int j = 0;j < alinacak.length() ; ++j){
-                if(repeatedCharacters.contains(alinacak.charAt(j))){
-                    ShoppingListRepeated.add(alinacak);
-                    break;
+            String r = "";
+            for(int i = 0; i < alinacak.length(); ++i){
+                char al = alinacak.charAt(i);
+                if(repeatedCharacters.contains(al)){
+                    if(!r.contains("" + al))
+                        r = r + al;
                 }else{
-                    repeatedCharacters.add(alinacak.charAt(j));
+                    repeatedCharacters.add(al);
                 }
             }
+            metin = metin + r;
         }
-
-        for(String alinacak : ShoppingListRepeated)
-            System.out.println(alinacak);
-
-
-        /*for(int i = 0; i < ShoppingList.size(); ++i){
-            String alinacak = ShoppingList.get(i);
-            System.out.println(alinacak);
-            for(int j = 0;j < alinacak.length() ; ++j){
-               System.out.println(alinacak.charAt(j));
-            }
-        }*/
+        System.out.println(metin);
 
 
     }
